@@ -1,16 +1,29 @@
-// Select color input
-// Select size input
+$(() => {
+  makeGrid = () => {
+    $('#sizePicker').submit((e) => {
+      e.preventDefault();
+      let width, height, row;
 
-// When size is submitted by the user, call makeGrid()
-makeGrid = () => {
-  var width, height, color;
+      if ($('#pixelCanvas').children().length > 0) {
+        $('#pixelCanvas td').remove();
+      }
 
-  $('#sizePicker').submit((e) => {
+      height = $('#inputHeight').val();
+      width = $('#inputWidth').val();
+      row = '<tr>' + ('<td></td>').repeat(width) + '</tr>';
+
+      for (var i = 0; i < width; i++) {
+        $('#pixelCanvas').append(row)
+      }
+    });
+  };
+
+  $('#pixelCanvas').on('click', 'td', (e) => {
     e.preventDefault();
-    height = $('#inputHeight').val();
-    width = $('#inputWidth').val();
-    color = $('#colorPicker').val();
+    let color = $('#colorPicker').val();
+    $(e.target).css('background-color', color);
   });
-}
 
-$(makeGrid());
+
+  makeGrid();
+});
