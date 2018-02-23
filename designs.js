@@ -12,7 +12,7 @@ $(() => {
       width = $('#inputWidth').val();
       row = '<tr>' + ('<td></td>').repeat(width) + '</tr>';
 
-      for (var i = 0; i < width; i++) {
+      for (var i = 0; i < height; i++) {
         $('#pixelCanvas').append(row);
       }
     });
