@@ -2,9 +2,15 @@
 // Select size input
 
 // When size is submitted by the user, call makeGrid()
-$(function makeGrid() {
-  console.log('ready');
-// Your code goes here!
+makeGrid = () => {
+  var width, height, color;
 
+  $('#sizePicker').submit((e) => {
+    e.preventDefault();
+    height = $('#inputHeight').val();
+    width = $('#inputWidth').val();
+    color = $('#colorPicker').val();
+  });
+}
 
-});
+$(makeGrid());
