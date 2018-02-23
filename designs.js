@@ -5,7 +5,7 @@ $(() => {
       let width, height, row;
 
       if ($('#pixelCanvas').children().length > 0) {
-        $('#pixelCanvas td').remove();
+        $('#pixelCanvas tr').remove();
       }
 
       height = $('#inputHeight').val();
@@ -13,7 +13,7 @@ $(() => {
       row = '<tr>' + ('<td></td>').repeat(width) + '</tr>';
 
       for (var i = 0; i < width; i++) {
-        $('#pixelCanvas').append(row)
+        $('#pixelCanvas').append(row);
       }
     });
   };
@@ -23,7 +23,6 @@ $(() => {
     let color = $('#colorPicker').val();
     $(e.target).css('background-color', color);
   });
-
 
   makeGrid();
 });
