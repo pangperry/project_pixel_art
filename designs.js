@@ -1,4 +1,5 @@
 $(() => {
+  // generates grid per user input
   makeGrid = () => {
     $('#sizePicker').submit((e) => {
       e.preventDefault();
@@ -18,6 +19,7 @@ $(() => {
     });
   };
 
+  // sets square color when clicked
   $('#pixelCanvas').on('click', 'td', (e) => {
     e.preventDefault();
     let color = $('#colorPicker').val();
